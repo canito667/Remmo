@@ -1,0 +1,30 @@
+Key Studio 
+studio_6066882018f6
+
+# Integrated MAC in Reemo  
+
+curl -skL -o /tmp/install_reemo.x 'https://download.reemo.io/macos/setup.x' && sudo bash /tmp/install_reemo.x
+# next step install key code 
+
+# WINDOWS 
+
+# Install
+
+md "c:\program files\reemo"
+powershell Invoke-WebRequest 'https://download.reemo.io/reemo-silent-installer.zip' -OutFile 'c:\Program Files\reemo\reemo-silent-installer.zip'
+powershell Expand-Archive -LiteralPath 'c:\Program Files\reemo\reemo-silent-installer.zip' -DestinationPath 'c:\Program Files\reemo\'
+c:\program files\reemo\silent-installer\vcredist_x64.exe /q /norestart
+c:\program files\reemo\silent-installer\vc_redist.x64.exe /q /norestart
+copy "c:\program files\reemo\silent-installer\reemo-autoupdater.exe" "c:\program files\reemo\"
+"c:\Program Files\reemo\reemo-autoupdater.exe" -install -key %studio_6066882018f6%
+
+# Unistall
+net stop reemo
+net stop reemoautoupdater
+sc delete reemo
+sc delete reemoautoupdater
+rmdir /S /Q "c:\program files\reemo"
+ 
+
+
+
