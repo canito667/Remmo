@@ -17,3 +17,10 @@ PsExec.exe \\%ip% -i -u %login% -p %password% cmd /c copy “c:\program files\re
 PsExec.exe \\%ip% -i -u %login% -p %password% cmd /c del /F /Q “c:\program files\reemo\version”
 
 PsExec.exe \\%ip% -i -u %login% -p %password% cmd /c net start reemoautoupdater
+
+
+
+
+********************
+
+PsExec.exe -u ras-hp-test01\admin \\10.19.60.55 cmd /c net stop reemoautoupdater
