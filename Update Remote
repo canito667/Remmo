@@ -1,0 +1,19 @@
+set ip = 10.19.60.49
+
+set login = admin
+
+set password = POS@dmin4EDH
+
+set studio_key = studio_6066882018f6
+
+PsExec.exe \\%ip% -i -u %login% -p %password% cmd /c net stop reemoautoupdater
+
+PsExec.exe \\%ip% -i -u %login% -p %password% cmd /c “powershell Invoke-WebRequest 'https://download.reemo.io/reemo-silent-installer.zip' -OutFile 'c:\Program Files\reemo\reemo-silent-installer.zip'”
+
+PsExec.exe \\%ip% -i -u %login% -p %password% cmd /c “powershell Expand-Archive -LiteralPath 'c:\Program Files\reemo\reemo-silent-installer.zip' -DestinationPath 'c:\Program Files\reemo\'”
+
+PsExec.exe \\%ip% -i -u %login% -p %password% cmd /c copy “c:\program files\reemo\silent-installer\reemo-autoupdater.exe” “c:\program files\reemo\”
+
+PsExec.exe \\%ip% -i -u %login% -p %password% cmd /c del /F /Q “c:\program files\reemo\version”
+
+PsExec.exe \\%ip% -i -u %login% -p %password% cmd /c net start reemoautoupdater
