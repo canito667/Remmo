@@ -1,0 +1,3 @@
+netsh advFirewall Firewall add rule name="OSRadar Rule PING IPv4" protocol=icmpv4:8,any dir=in action=allow 
+
+https://www.osradar.com/how-to-enable-and-disable-ping-icmp-in-windows-10-firewall/
