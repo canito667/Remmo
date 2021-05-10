@@ -1,0 +1,10 @@
+curl -skL -o /tmp/install_reemo.x 'https://download.reemo.io/macos/setup.x' && sudo bash /tmp/install_reemo.x
+
+Add cle 
+
+private
+afb67121e63c
+
+
+Public 
+studio_6066882018f6
